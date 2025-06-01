@@ -1,0 +1,66 @@
+/* App.css */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+  position: relative;
+  font-family: 'Jost', sans-serif;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle at center,
+      rgba(255, 255, 255, 0.9) 10%,
+      rgba(230, 210, 180, 0.7) 40%,
+      rgba(180, 160, 130, 0.6) 70%,
+      rgba(100, 80, 50, 0.5) 100%);
+  filter: blur(4px);
+  z-index: -2;
+}
+
+/* Add soft white blurred circles */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+body::after {
+  background-image:
+    radial-gradient(white 20%, transparent 70%),
+    radial-gradient(white 20%, transparent 70%),
+    radial-gradient(white 15%, transparent 80%),
+    radial-gradient(white 25%, transparent 80%),
+    radial-gradient(white 20%, transparent 80%),
+    radial-gradient(white 15%, transparent 70%),
+    radial-gradient(white 15%, transparent 70%);
+  background-repeat: no-repeat;
+  background-position:
+    0% 0%,
+    20% 0%,
+    70% 20%,
+    60% 80%,
+    30% 70%,
+    80% 60%,
+    100% 100%;
+  background-size:
+    600px 400px,
+    300px 150px,
+    650px 650px,
+    180px 180px,
+    620px 620px,
+    620px 620px;
+  filter: blur(60px);
+}
