@@ -1,0 +1,185 @@
+.new-arrival-section {
+    margin: 50px 100px;
+    padding: 20px;
+    background-color: rgb(115, 69, 3, 0.65);
+    border-radius: 5px;
+    text-align: center;
+}
+
+.new-arrival-title {
+    font-size: 1.8rem;
+    font-family: 'Jost', sans-serif;
+    font-weight: 500;
+}
+
+.new-arrival-grid {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    width: 100%;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.new-arrival-card {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.new-arrival-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.new-arrival-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex: 1;
+}
+
+.new-arrival-square {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s;
+}
+
+.new-arrival-full {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1 / 2;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s;
+}
+
+/* Default styling for large screens */
+@media (min-width: 801px) {
+    .new-arrival-grid {
+        max-width: 75%;
+    }
+
+    .new-arrival-section {
+        padding: 3rem 0;
+    }
+}
+
+/* Medium screens: 730px–800px */
+@media (max-width: 800px) and (min-width: 731px) {
+    .new-arrival-grid {
+        max-width: 85%;
+    }
+
+    .new-arrival-square,
+    .new-arrival-full {
+        border-radius: 0.4rem;
+    }
+
+    .new-arrival-title {
+        font-size: 1.5rem;
+    }
+}
+
+/* Smaller screens: 420px–730px */
+@media (max-width: 730px) and (min-width: 421px) {
+    .new-arrival-grid {
+        max-width: 95%;
+        gap: 0.5rem;
+    }
+
+    .new-arrival-section {
+        padding: 2rem 0;
+    }
+
+    .new-arrival-title {
+        font-size: 1.2rem;
+    }
+}
+
+/* Mobile: < 420px */
+@media (max-width: 420px) {
+    .new-arrival-grid {
+        max-width: 98%;
+        gap: 0.3rem;
+    }
+
+    .new-arrival-square {
+        width: 100%;
+    }
+
+    .new-arrival-full {
+        width: 100%;
+    }
+
+    .new-arrival-section {
+        padding: 1rem 0;
+    }
+
+    .new-arrival-title {
+        font-size: 1rem;
+    }
+
+    .new-arrival-view-more-btn {
+        padding: 0.3rem 0.8rem;
+        font-size: 0.75rem;
+    }
+}
+
+
+.new-arrival-hover-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    text-align: center;
+    padding: 0.5rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.new-arrival-hover-label p {
+    color: #000;
+    margin: 0;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.new-arrival-card:hover .new-arrival-hover-label {
+    transform: translateY(0%);
+}
+
+.new-arrival-view-more-btn {
+    background-color: #734503;
+    color: #fff;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.new-arrival-view-more-btn:hover {
+    background-color: #5c3702;
+}
+
+/* Responsive */
+@media (max-width: 608px) {
+    .new-arrival-section {
+        margin: 20px 20px;
+        padding: 20px;
+
+    }
+
+}

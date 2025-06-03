@@ -1,6 +1,8 @@
 import React from 'react';
 import './landing.css';
-
+import ct1 from '../assets/category1.webp';
+import ct2 from '../assets/category2.png';
+import NewArrival from '../components/NewArrival';
 export default function EidLandingPage() {
     return (
         <div className="eid-landing">
@@ -36,14 +38,16 @@ export default function EidLandingPage() {
                     {/* Category Items */}
                     <div className="category-items">
                         {[
-                            { label: 'Neck Pieces', img: '/neckpiece.jpg' },
-                            { label: 'Kurtis', img: '/kurti.jpg' },
-                            { label: 'Ear Rings', img: '/earrings.jpg' },
-                            { label: 'Sarees', img: '/saree.jpg' },
+                            { label: 'Neck Pieces', img: ct1 },
+                            { label: 'Kurtis', img: ct2 },
+                            { label: 'Ear Rings', img: ct1 },
+                            { label: 'Sarees', img: ct2 },
                         ].map((item, index) => (
                             <div key={index} className="category-item">
                                 <div className="item-image-wrapper">
-                                    <img src={item.img} alt={item.label} className="item-image" />
+                                    <div className="item-image-wrapper2">
+                                        <img src={item.img} alt={item.label} className="item-image" />
+                                    </div>
                                 </div>
                                 <p className="item-label">{item.label}</p>
                             </div>
@@ -54,6 +58,7 @@ export default function EidLandingPage() {
                     <button className="arrow">&#8594;</button>
                 </div>
             </div>
+            <NewArrival />
         </div>
     );
 }
