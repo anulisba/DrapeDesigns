@@ -1,0 +1,14 @@
+.trending-product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 20px;
+}
+
+@media (min-width: 768px) {
+    .trending-product-grid {
+        grid-template-columns: repeat(4, 1fr);
+        padding: 50px;
+        gap: 30px;
+    }
+}

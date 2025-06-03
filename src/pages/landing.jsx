@@ -3,6 +3,7 @@ import './landing.css';
 import ct1 from '../assets/category1.webp';
 import ct2 from '../assets/category2.png';
 import NewArrival from '../components/NewArrival';
+import ProductGrid from '../components/TrendingFashion';
 export default function EidLandingPage() {
     return (
         <div className="eid-landing">
@@ -59,6 +60,7 @@ export default function EidLandingPage() {
                 </div>
             </div>
             <NewArrival />
+            <ProductGrid />
         </div>
     );
 }
