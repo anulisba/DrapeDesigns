@@ -8,18 +8,18 @@
     overflow: hidden;
 }
 
-.carousel-viewport {
+.cc-carousel-viewport {
     width: 100%;
     overflow: hidden;
     position: relative;
 }
 
-.carousel-track {
+.cc-carousel-track {
     display: flex;
     will-change: transform;
 }
 
-.carousel-arrow {
+.cc-carousel-arrow {
     font-size: 2rem;
     font-weight: bold;
     color: #4b5563;
@@ -30,11 +30,11 @@
     flex-shrink: 0;
 }
 
-.carousel-arrow:hover {
+.cc-carousel-arrow:hover {
     color: #1f2937;
 }
 
-.carousel-item {
+.cc-carousel-item {
     flex: 0 0 auto;
     display: flex;
     flex-direction: column;
@@ -44,7 +44,7 @@
     scroll-snap-align: center;
 }
 
-.item-image-wrapper {
+.cc-item-image-wrapper {
     width: 8rem;
     height: 8rem;
     border-radius: 50%;
@@ -55,7 +55,7 @@
     overflow: hidden;
 }
 
-.item-image-wrapper2 {
+.cc-item-image-wrapper2 {
     width: 7.5rem;
     height: 7.5rem;
     border-radius: 50%;
@@ -63,13 +63,13 @@
     overflow: hidden;
 }
 
-.item-image {
+.cc-item-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.item-label {
+.cc-item-label {
     margin-top: 0.5rem;
     font-size: 0.875rem;
     color: #4b3c2d;
@@ -86,12 +86,12 @@
 
     }
 
-    .item-image-wrapper {
+    .cc-item-image-wrapper {
         width: 5rem;
         height: 5rem;
     }
 
-    .item-image-wrapper2 {
+    .cc-item-image-wrapper2 {
         width: 4.5rem;
         height: 4.5rem;
     }

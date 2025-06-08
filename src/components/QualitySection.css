@@ -6,7 +6,7 @@
     flex-wrap: wrap;
     width: 80%;
     margin: 2rem auto;
-    ;
+
     border: 1px solid #e0d0b8;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -61,7 +61,7 @@
 /* Medium screens: 768px-1024px */
 @media (max-width: 1024px) {
     .quality-section {
-        width: 95%;
+        width: 90%;
     }
 
     .quality-box {
@@ -78,8 +78,9 @@
 @media (max-width: 767px) {
     .quality-section {
         flex-direction: column;
-        width: 90%;
+        width: 80%;
         max-width: 500px;
+        margin: 0 auto;
         padding: 0;
         background-color: transparent;
         border: none;
@@ -90,6 +91,7 @@
         width: 100%;
         padding: 1.2rem 1.5rem;
         border: 2px solid #e0d0b8;
+        margin: 0 auto;
 
 
     }

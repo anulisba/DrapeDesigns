@@ -86,11 +86,11 @@ const CategoryCarousel = () => {
 
     return (
         <div className="category-carousel">
-            <button className="carousel-arrow left" onClick={prevSlide}>&#8592;</button>
+            <button className="cc-carousel-arrow left" onClick={prevSlide}>&#8592;</button>
 
-            <div className="carousel-viewport">
+            <div className="cc-carousel-viewport">
                 <div
-                    className="carousel-track"
+                    className="cc-carousel-track"
                     style={{
                         transform: `translateX(${-currentSlide * (100 / slidesToShow)}%)`,
                         transition: transitionEnabled ? 'transform 0.5s ease' : 'none'
@@ -99,21 +99,21 @@ const CategoryCarousel = () => {
                     {circularItems.map((item, index) => (
                         <div
                             key={index}
-                            className="carousel-item"
+                            className="cc-carousel-item"
                             style={{ width: `${100 / slidesToShow}%` }}
                         >
-                            <div className="item-image-wrapper">
-                                <div className="item-image-wrapper2">
-                                    <img src={item.img} alt={item.label} className="item-image" />
+                            <div className="cc-item-image-wrapper">
+                                <div className="cc-item-image-wrapper2">
+                                    <img src={item.img} alt={item.label} className="cc-item-image" />
                                 </div>
                             </div>
-                            <p className="item-label">{item.label}</p>
+                            <p className="cc-item-label">{item.label}</p>
                         </div>
                     ))}
                 </div>
             </div>
 
-            <button className="carousel-arrow right" onClick={nextSlide}>&#8594;</button>
+            <button className="cc-carousel-arrow right" onClick={nextSlide}>&#8594;</button>
         </div>
     );
 };
