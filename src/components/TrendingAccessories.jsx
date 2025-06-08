@@ -32,10 +32,10 @@ const products = [
     // Add more products as needed
 ];
 
-const ProductGrid = () => {
+const TrendingAccesories = () => {
     return (
         <div className='trending-section'>
-            <h2 >TRENDING FASHION</h2>
+            <h2 >TRENDING ACCESSORIES</h2>
             <div className="trending-product-grid">
                 {products.map((prod, idx) => (
                     <Card
@@ -52,4 +52,4 @@ const ProductGrid = () => {
     );
 };
 
-export default ProductGrid;
+export default TrendingAccesories;

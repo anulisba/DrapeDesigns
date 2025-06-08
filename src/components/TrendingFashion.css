@@ -1,14 +1,34 @@
+.trending-section {
+    width: 90%;
+    margin: 0 auto;
+
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
 .trending-product-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     padding: 20px;
+    padding-bottom: 0;
+    width: 100%;
+    /* Ensures grid fills container */
 }
 
 @media (min-width: 768px) {
+    .trending-section {
+        width: 80%;
+    }
+
     .trending-product-grid {
         grid-template-columns: repeat(4, 1fr);
         padding: 50px;
+        padding-bottom: 0;
         gap: 30px;
     }
 }
