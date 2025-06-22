@@ -4,25 +4,25 @@ import './TrendingFashion.css';
 
 const products = [
     {
-        image: 'https://res.cloudinary.com/dpo91btlc/image/upload/v1748968758/product5_qlt5vk.jpg',
+        image: 'https://res.cloudinary.com/dpo91btlc/image/upload/v1750586400/WhatsApp_Image_2025-06-09_at_11.01.51_AM_1_wjxegy.jpg',
         productName: 'Product 1',
         actualPrice: 1999,
         offerPrice: 990,
     },
     {
-        image: 'https://res.cloudinary.com/dpo91btlc/image/upload/v1748968758/product5_qlt5vk.jpg',
+        image: 'https://res.cloudinary.com/dpo91btlc/image/upload/c_crop,ar_9:16/v1750586423/WhatsApp_Image_2025-06-09_at_11.01.09_AM_gpex3q.jpg',
         productName: 'Product 2',
         actualPrice: 1499,
         offerPrice: 890,
     },
     {
-        image: 'https://res.cloudinary.com/dpo91btlc/image/upload/v1748968758/product5_qlt5vk.jpg',
+        image: 'https://res.cloudinary.com/dpo91btlc/image/upload/c_crop,ar_9:16/v1750586367/WhatsApp_Image_2025-06-09_at_11.01.24_AM_tngayi.jpg',
         productName: 'Product 1',
         actualPrice: 1999,
         offerPrice: 990,
     },
     {
-        image: 'https://res.cloudinary.com/dpo91btlc/image/upload/v1748968758/product5_qlt5vk.jpg',
+        image: 'https://res.cloudinary.com/dpo91btlc/image/upload/c_crop,ar_9:16/v1750586423/WhatsApp_Image_2025-06-09_at_11.01.09_AM_gpex3q.jpg',
         productName: 'Product 2',
         actualPrice: 1499,
         offerPrice: 890,
