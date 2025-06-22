@@ -24,6 +24,7 @@
     width: 100%;
     max-width: 90%;
     margin: 0 auto;
+    margin-bottom: 20px;
 }
 
 .new-arrival-card {
@@ -133,8 +134,8 @@
     }
 
     .new-arrival-view-more-btn {
-        padding: 0.3rem 0.8rem;
-        font-size: 0.75rem;
+        padding: 0.2rem 0.8rem;
+        font-size: 0.5rem;
     }
 }
 
@@ -184,7 +185,6 @@
     border: none;
     border-radius: 0px;
     cursor: pointer;
-    margin-top: 20px;
     font-weight: bold;
     transition: background-color 0.3s ease;
 }

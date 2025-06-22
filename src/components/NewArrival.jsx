@@ -7,11 +7,11 @@ import pr4 from '../assets/product4.webp';
 import pr5 from '../assets/product5.webp';
 
 const newArrivals = [
-    { src: pr1, title: 'Necklace' },
-    { src: pr2, title: 'Kurta' },
-    { src: pr3, title: 'Hand Bag' },
-    { src: pr4, title: 'Ear Rings' },
-    { src: pr5, title: 'Jewellery Set' },
+    { src: "https://res.cloudinary.com/dpo91btlc/image/upload/v1750586424/WhatsApp_Image_2025-06-09_at_11.01.11_AM_1_qxfck7.jpg", title: 'Necklace' },
+    { src: "https://res.cloudinary.com/dpo91btlc/image/upload/v1750586400/WhatsApp_Image_2025-06-09_at_11.01.51_AM_1_wjxegy.jpg", title: 'Kurta' },
+    { src: "https://res.cloudinary.com/dpo91btlc/image/upload/v1750586400/WhatsApp_Image_2025-06-09_at_11.01.50_AM_x2r7gq.jpg", title: 'Hand Bag' },
+    { src: "https://res.cloudinary.com/dpo91btlc/image/upload/v1750586400/WhatsApp_Image_2025-06-09_at_11.01.50_AM_x2r7gq.jpg", title: 'Ear Rings' },
+    { src: "https://res.cloudinary.com/dpo91btlc/image/upload/v1750586367/WhatsApp_Image_2025-06-09_at_11.01.24_AM_2_nft1s0.jpg", title: 'Jewellery Set' },
 ];
 
 const NewArrival = () => {

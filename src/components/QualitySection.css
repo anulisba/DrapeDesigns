@@ -61,7 +61,7 @@
 /* Medium screens: 768px-1024px */
 @media (max-width: 1024px) {
     .quality-section {
-        width: 90%;
+        width: 80%;
     }
 
     .quality-box {
@@ -106,7 +106,7 @@
 /* Mobile screens: < 480px */
 @media (max-width: 480px) {
     .quality-section {
-        width: 95%;
+        width: 90%;
         margin: 1.5rem auto;
     }
 

@@ -35,7 +35,7 @@ const products = [
 const ProductGrid = () => {
     return (
         <div className='trending-section'>
-            <h2 >TRENDING FASHION</h2>
+            <h2 className='trending-section-h2'>Trending Fashion</h2>
             <div className="trending-product-grid">
                 {products.map((prod, idx) => (
                     <Card

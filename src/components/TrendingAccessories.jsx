@@ -35,7 +35,7 @@ const products = [
 const TrendingAccesories = () => {
     return (
         <div className='trending-section'>
-            <h2 >TRENDING ACCESSORIES</h2>
+            <h2 className='trending-section-h2'>Top Seller</h2>
             <div className="trending-product-grid">
                 {products.map((prod, idx) => (
                     <Card

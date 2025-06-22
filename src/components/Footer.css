@@ -1,19 +1,19 @@
+/* Footer.css */
 .footer-container {
     background-color: #1A1A1A;
     color: white;
-    padding: 2rem 1.5rem;
-    font-family: sans-serif;
-    font-size: 0.875rem;
-    font-weight: 300;
+    padding: 3rem 1.5rem 1rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 1rem;
     border-top: 1px solid #bfa67a;
 }
 
 .footer-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: auto;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2.5rem;
+    max-width: 1300px;
+    margin: 0 auto;
 }
 
 .footer-logo-section {
@@ -22,53 +22,162 @@
     align-items: flex-start;
 }
 
-.footer-logo-letter {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #bfa67a;
-    letter-spacing: 0.1em;
+.footer-logo-img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
 }
 
-.footer-logo-title {
-    font-size: 1.2rem;
-    font-weight: 600;
-}
-
-.footer-logo-tagline {
-    font-size: 0.75rem;
-    letter-spacing: 0.15em;
-    color: #bfa67a;
-    margin-bottom: 1rem;
+.footer-tagline {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-bottom: 20px;
+    line-height: 1.5;
 }
 
 .footer-social-icons {
     display: flex;
-    gap: 0.5rem;
+    gap: 12px;
 }
 
 .footer-icon-box {
-    width: 20px;
-    height: 20px;
+    width: 36px;
+    height: 36px;
     border: 1px solid #bfa67a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #bfa67a;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.footer-icon-box:hover {
+    background-color: #bfa67a;
+    color: #1A1A1A;
 }
 
 .footer-column {
     display: flex;
     flex-direction: column;
-    gap: 0.4rem;
+    gap: 0.8rem;
 }
 
 .footer-heading {
-    font-weight: 500;
+    font-weight: 600;
     color: #bfa67a;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1.2rem;
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.footer-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: #bfa67a;
+}
+
+.footer-link {
+    color: #ddd;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.footer-link:hover {
+    color: #bfa67a;
+    padding-left: 5px;
 }
 
 .footer-bottom-bar {
     text-align: center;
-    border-top: 1px solid #bfa67a;
-    margin-top: 2rem;
-    padding-top: 1rem;
-    font-size: 0.75rem;
-    color: #aaaaaa;
+    border-top: 1px solid #333;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    font-size: 0.85rem;
+    color: #777;
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .footer-content {
+        gap: 2rem;
+    }
+
+    .footer-heading {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        padding: 2.5rem 1.5rem 1rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem 1.5rem;
+    }
+
+    .footer-logo-section {
+        grid-column: span 2;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-heading::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .footer-bottom-bar {
+        margin-top: 2rem;
+        padding-top: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-container {
+        padding: 2rem 1rem 0.5rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .footer-logo-section {
+        grid-column: span 1;
+    }
+
+    .footer-column {
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-heading::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .footer-link:hover {
+        padding-left: 0;
+    }
+
+    .footer-bottom-bar {
+        font-size: 0.8rem;
+        padding: 1rem 0.5rem;
+    }
 }

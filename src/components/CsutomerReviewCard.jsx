@@ -183,17 +183,9 @@ export default function CustomerReviews() {
     return (
         <section className="reviews-section">
             <MDBContainer className="py-0">
-                <div className="our-services-header">
-                    <div className='our-service-title'>
-                        <h2>What Our Clients Say<br />About Us</h2><div className="our-service-line-heading" />
-                    </div>
-                    <div className="about-us-line-container">
-                        <div className="about-us-line" />
-                        <span className="about-us-subtitle">CUSTOMER REVIEWS</span>
-                    </div>
 
-                </div>
-
+                <h2 className='trending-section-h2' style={{ textAlign: "center" }}
+                >Customer Reviews</h2>
                 {/* <p className="section-description">
                     Discover why clients trust us to transform their spaces into extraordinary environments
                 </p> */}

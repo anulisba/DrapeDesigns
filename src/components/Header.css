@@ -1,22 +1,23 @@
+/* Header.css */
 .header-component {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0px 40px;
+    padding: 0 40px;
     background-color: #222222;
     height: 55px;
-    position: relative;
 }
 
 .header-logo img {
     width: 50px;
     height: 50px;
+    transition: all 0.3s ease;
 }
 
 .header-navbar {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    flex: 1;
 }
 
 .header-navbar ul {
@@ -32,9 +33,10 @@
     cursor: pointer;
     font-size: 16px;
     font-family: 'Jost', sans-serif;
+    transition: font-size 0.3s ease;
 }
 
-/* Hamburger Icon Styles */
+/* Hamburger Icon */
 .hamburger-icon {
     display: none;
     flex-direction: column;
@@ -48,24 +50,48 @@
     height: 3px;
     background-color: white;
     border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
+/* Tablet View (769px - 1024px) */
+@media (max-width: 1024px) {
+    .header-component {
+        padding: 0 30px;
+    }
+
+    .header-navbar ul {
+        gap: 30px;
+    }
+
+    .header-navbar li {
+        font-size: 15px;
+    }
+}
+
+/* Mobile View (<= 768px) */
 @media (max-width: 768px) {
+    .header-component {
+        padding: 0 20px;
+    }
+
+    .header-logo img {
+        width: 40px;
+        height: 40px;
+    }
+
     .header-navbar {
         position: fixed;
         top: 0;
         right: -100%;
-        left: auto;
-        transform: none;
         height: 100vh;
         width: 200px;
         background-color: #222222;
         opacity: 90%;
-        display: flex;
         flex-direction: column;
         align-items: center;
         transition: right 0.3s ease-in-out;
         padding-top: 100px;
+        z-index: 5;
     }
 
     .header-navbar.open {
@@ -79,5 +105,46 @@
 
     .hamburger-icon {
         display: flex;
+        position: relative;
+        z-index: 10;
+    }
+
+    /* Animate hamburger to X when open */
+    .hamburger-icon span {
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .menu-open .hamburger-icon span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-open .hamburger-icon span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-open .hamburger-icon span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+/* Small Mobile View (<= 480px) */
+@media (max-width: 480px) {
+    .header-component {
+        padding: 0 15px;
+        height: 50px;
+    }
+
+    .header-logo img {
+        width: 36px;
+        height: 36px;
+    }
+
+    .header-navbar {
+        width: 180px;
+        padding-top: 80px;
+    }
+
+    .header-navbar li {
+        font-size: 14px;
     }
 }
