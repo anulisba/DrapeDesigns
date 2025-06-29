@@ -176,6 +176,7 @@ const ProductDetailPage = () => {
 
             <CustomerReviews />
             <ProductGrid />
+            <div className='spac-padding'></div>
             <Footer />
         </div>
     );
