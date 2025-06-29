@@ -22,13 +22,14 @@ function Header() {
 
             <div className={`header-navbar ${menuOpen ? 'open' : ''}`}>
                 <ul>
-                    <li onClick={() => navigate('/')}>Home</li>
-                    <li onClick={() => navigate('/about-us')}>About Us</li>
-                    <li onClick={() => navigate('/clothing-store')}>Clothing</li>
-                    <li onClick={handleContactUs}>Contact Us</li>
+                    <li onClick={() => { navigate('/'); setMenuOpen(false); }}>Home</li>
+                    <li onClick={() => { navigate('/about-us'); setMenuOpen(false); }}>About Us</li>
+                    <li onClick={() => { navigate('/clothing-store'); setMenuOpen(false); }}>Clothing</li>
+                    <li onClick={() => { handleContactUs(); setMenuOpen(false); }}>Contact Us</li>
+
                 </ul>
             </div>
-            <div className="hamburger-icon" onClick={() => setMenuOpen(!menuOpen)}>
+            <div className={`hamburger-icon ${menuOpen ? 'menu-open' : ''}`} onClick={() => setMenuOpen(!menuOpen)}>
                 <span></span>
                 <span></span>
                 <span></span>

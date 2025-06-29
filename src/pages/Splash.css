@@ -43,7 +43,6 @@
 
 .ring-path {
     stroke-dasharray: 282.6;
-    /* 2 * π * r = 2π * 45 */
     stroke-dashoffset: 282.6;
     animation: drawRing 2s ease-out forwards;
 }

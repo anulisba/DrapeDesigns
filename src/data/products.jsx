@@ -29,7 +29,7 @@ const products = [
     {
         id: 2,
         brand: "Vastra Vogue",
-        productName: "Chikankari Cotton Kurti",
+        productName: "Chikankari Kurti",
         actualPrice: 1450,
         offerPrice: 870,
         discountPercentage: 40,
@@ -77,7 +77,7 @@ const products = [
     {
         id: 4,
         brand: "Ethnic Essence",
-        productName: "Anarkali Partywear Kurti",
+        productName: "Anarkali Kurti",
         actualPrice: 1890,
         offerPrice: 1134,
         discountPercentage: 40,
@@ -100,7 +100,7 @@ const products = [
     {
         id: 5,
         brand: "FabFusion",
-        productName: "Mandarin Collar Cotton Kurti",
+        productName: "Cotton Kurti",
         actualPrice: 1100,
         offerPrice: 660,
         discountPercentage: 40,
@@ -123,7 +123,7 @@ const products = [
     {
         id: 6,
         brand: "Kalakriti",
-        productName: "Mirror Work Ethnic Kurti",
+        productName: "Mirror Work Kurti",
         actualPrice: 1750,
         offerPrice: 1050,
         discountPercentage: 40,
@@ -146,7 +146,7 @@ const products = [
     {
         id: 7,
         brand: "Indie Threads",
-        productName: "Straight Fit Office Kurti",
+        productName: "Office Kurti",
         actualPrice: 1350,
         offerPrice: 810,
         discountPercentage: 40,

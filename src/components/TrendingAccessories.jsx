@@ -14,7 +14,7 @@ const TrendingAccessories = () => {
     )
         .slice(0, 4);
     const handleViewMore = () => {
-        navigate('/category-page?category=kurtis');
+        navigate('/category-page?category=Kurtis');
     };
 
     return (

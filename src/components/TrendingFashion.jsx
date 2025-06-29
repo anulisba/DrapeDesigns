@@ -12,7 +12,7 @@ const ProductGrid = () => {
     );
     const navigate = useNavigate();
     const handleViewMore = () => {
-        navigate('/category-page?category=kurtis');
+        navigate('/category-page?category=Kurtis');
     };
 
     return (

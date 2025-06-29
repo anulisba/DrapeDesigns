@@ -16,7 +16,7 @@ const NewArrival = () => {
         navigate(`/product/${id}`);
     };
     const handleViewMore = () => {
-        navigate('/category-page?category=kurtis');
+        navigate('/category-page?category=Kurtis');
     };
     return (
         <div className="new-arrival-section">
