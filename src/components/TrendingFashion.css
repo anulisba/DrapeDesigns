@@ -53,7 +53,7 @@
     }
 
     .trending-section-h2 {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
 
     .trending-product-grid {
@@ -65,7 +65,7 @@
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 618px) {
     .trending-section-h2 {
         font-size: 1.3rem;
     }
