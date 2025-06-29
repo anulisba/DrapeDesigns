@@ -39,7 +39,14 @@ const Footer = () => {
                     <Link to="/" className="footer-link">Home</Link>
                     <Link to="/about-us" className="footer-link">About Us</Link>
                     <Link to="/clothing-store" className="footer-link">Clothing</Link>
-                    <a href="#contact" className="footer-link">Contact Us</a> {/* You can replace with a scroll if "Contact Us" is a section */}
+                    <a
+                        href="https://wa.me/919847075514?text=Hi%20Drape%20Designs%2C%20I'm%20interested%20in%20your%20collection!"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="footer-link"
+                    >
+                        Contact Us
+                    </a>
                 </div>
 
                 {/* Expandable Policies */}

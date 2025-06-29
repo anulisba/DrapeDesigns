@@ -46,6 +46,7 @@ const ProductDetailPage = () => {
 
     const handleBuyNow = () => {
         const msg = `
+*Hi there is a booking from website, Here are the details*
 *Product Name:* ${product.productName}
 *Size:* ${selectedSize || 'Not selected'}
 *Quantity:* ${quantity}
@@ -58,7 +59,7 @@ const ProductDetailPage = () => {
         `;
 
         const encodedMsg = encodeURIComponent(msg);
-        const whatsappURL = `https://wa.me/917034864957?text=${encodedMsg}`;
+        const whatsappURL = `https://wa.me/919847075514?text=${encodedMsg}`;
         window.open(whatsappURL, '_blank');
     };
 

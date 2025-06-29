@@ -6,6 +6,14 @@ import { useNavigate } from 'react-router-dom';
 function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
     const navigate = useNavigate();
+    const handleContactUs = () => {
+        const msg = `
+*Hi Drape Designs, I'm interested in your collection!*
+        `;
+        const encodedMsg = encodeURIComponent(msg);
+        const whatsappURL = `https://wa.me/919847075514?text=${encodedMsg}`;
+        window.open(whatsappURL, '_blank');
+    }
     return (
         <div className="header-component">
             <div className="header-logo">
@@ -17,7 +25,7 @@ function Header() {
                     <li onClick={() => navigate('/')}>Home</li>
                     <li onClick={() => navigate('/about-us')}>About Us</li>
                     <li onClick={() => navigate('/clothing-store')}>Clothing</li>
-                    <li>Contact Us</li>
+                    <li onClick={handleContactUs}>Contact Us</li>
                 </ul>
             </div>
             <div className="hamburger-icon" onClick={() => setMenuOpen(!menuOpen)}>
