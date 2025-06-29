@@ -7,6 +7,8 @@ import ClothingStore from "./pages/Clothing";
 import ProductDetailPage from "./pages/ProductDetailPage";
 import RouteChangeHandler from "./components/RouteChangeHandler";
 import Splash from "./pages/splash";
+import CategoryPage from "./pages/CategoryDisplayPage";
+import AboutUs from "./pages/AboutUs";
 
 function App() {
   const [showSplash, setShowSplash] = useState(true);
@@ -29,6 +31,8 @@ function App() {
               <Route path="/" element={<EidLandingPage />} />
               <Route path="/clothing-store" element={<ClothingStore />} />
               <Route path="/product/:id" element={<ProductDetailPage />} />
+              <Route path="/category-page" element={<CategoryPage />} />
+              <Route path="/about-us" element={<AboutUs />} />
             </Routes>
           </RouteChangeHandler>
         </Router>

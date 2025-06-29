@@ -135,42 +135,36 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 const reviews = [
     {
         name: "Alen Alex",
-        location: "Kakkanad, Kerala",
-        content: "Abhi's Planet completely reimagined our 3BHK flat. From layout optimization to premium finishes, everything was executed with precision. The result is a sophisticated home we love coming back to.",
+        content: "Drape Designs exceeded my expectations! The fabric was luxurious, the fit was perfect, and the attention to detail was amazing. I got so many compliments at the event!",
         avatar: "https://res.cloudinary.com/dpo91btlc/image/upload/v1748751402/3d-rendering-luxury-modern-living-room-with-fabric-sofa_uglzwv.jpg"
     },
     {
         name: "Nivin Paul",
-        location: "Kakkanad, Kerala",
-        content: "We wanted a stylish yet functional makeover for our apartment, and Abhi’s Planet nailed it. Great eye for detail and thoughtful use of space — exceeded our expectations!",
+        content: "Absolutely loved the ethnic wear collection at Drape Designs. The stitching was flawless and delivery was quick. Will definitely shop again!",
         avatar: "https://res.cloudinary.com/dpo91btlc/image/upload/v1748700336/2_xyjpcn.png"
     },
     {
         name: "Sambath",
-        location: "Vayttila, Kerala",
-        content: "Our compact flat was redesigned into a spacious, vibrant living area. The interiors now reflect our personality, and guests always compliment the decor. Fantastic work!",
+        content: "I was looking for a classy traditional outfit and Drape Designs delivered just that. Great quality, reasonable pricing, and stunning design!",
         avatar: "https://res.cloudinary.com/dpo91btlc/image/upload/v1748697879/IMG_2185_i2bhiw.jpg"
     },
     {
         name: "Akash",
-        location: "Thrissur, Kerala",
-        content: "We entrusted Abhi’s Planet with our standalone residence renovation. Their ability to blend modern aesthetics with traditional charm was impressive. It truly feels like home now.",
+        content: "I gifted a dress from Drape Designs to my sister and she absolutely loved it! Beautiful packaging and premium quality fabric.",
         avatar: "https://res.cloudinary.com/dpo91btlc/image/upload/v1748751683/modern-minimalist-office_2_xxopco.jpg"
     },
     {
         name: "Anu",
-        location: "Calicut, Kerala",
-        content: "Abhi’s Planet handled our residential project with creativity and care. Every room reflects our lifestyle. It’s elegant, functional, and feels uniquely ours.",
+        content: "My Drape Designs saree was the highlight of my cousin’s wedding! It looked so elegant and fit like it was custom-made.",
         avatar: "https://res.cloudinary.com/dpo91btlc/image/upload/v1748697879/IMG_2204_xm1wvh.jpg"
     },
     {
         name: "Sreedevi",
-        location: "Alappuzha, Kerala",
-        content: "Choosing Abhi’s Planet for our home interiors was the best decision we made. They brought warmth, elegance, and practicality to every room. The attention to detail truly made our house a home.",
+        content: "Shopping at Drape Designs was a delightful experience. From fabric to finishing, everything screamed premium. I highly recommend it!",
         avatar: "https://res.cloudinary.com/dpo91btlc/image/upload/v1748697879/IMG_2195_x9p40b.jpg"
     }
-
 ];
+
 
 
 // Split reviews into chunks of 3 for desktop carousel
@@ -186,10 +180,6 @@ export default function CustomerReviews() {
 
                 <h2 className='trending-section-h2' style={{ textAlign: "center" }}
                 >Customer Reviews</h2>
-                {/* <p className="section-description">
-                    Discover why clients trust us to transform their spaces into extraordinary environments
-                </p> */}
-                {/* Desktop Carousel (3 reviews per slide) */}
                 <div className="d-none d-lg-block">
                     <MDBCarousel
                         showControls={false}
@@ -261,9 +251,11 @@ const ReviewCard = ({ review }) => {
                     className="review-avatar"
                     alt={review.name}
                 />
-                <div className="review-titles">
-                    <h5 className="review-name">{review.name}</h5>
-                    <h6 className="review-role">{review.location}</h6>
+
+                <div className="review-rating">
+                    {[...Array(5)].map((_, i) => (
+                        <MDBIcon key={i} fas icon="star" className="star-icon" />
+                    ))}
                 </div>
             </div>
 
@@ -275,11 +267,7 @@ const ReviewCard = ({ review }) => {
                 </div>
             </div>
 
-            <div className="review-rating">
-                {[...Array(5)].map((_, i) => (
-                    <MDBIcon key={i} fas icon="star" className="star-icon" />
-                ))}
-            </div>
+
         </div>
     );
 };

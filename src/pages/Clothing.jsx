@@ -3,6 +3,7 @@ import './clothing.css';
 import CategoryPageCarousel from '../components/CategoryPageItem';
 import ClothingPageProduct from '../components/ClothingPageItems';
 import Footer from '../components/Footer';
+import CategoryCarousel from '../components/CategoryCaurosel';
 
 export default function ClothingStore() {
     return (
@@ -14,9 +15,10 @@ export default function ClothingStore() {
                     className="banner-image"
                 />
             </div>
-            <h2>Fashion Store</h2>
-            <CategoryPageCarousel />
+            <h2 style={{ paddingTop: "50px" }}>Fashion Store</h2>
+            <CategoryCarousel />
             <ClothingPageProduct />
+            <div className='spac-padding'></div>
             <Footer />
         </div>
     )

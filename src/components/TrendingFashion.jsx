@@ -2,6 +2,7 @@ import React from 'react';
 import Card from './card';
 import products from '../data/products';
 import './TrendingFashion.css';
+import { useNavigate } from 'react-router-dom';
 
 const ProductGrid = () => {
     // Filter products: must be in both 'accessories' and 'trending' categories
@@ -9,6 +10,10 @@ const ProductGrid = () => {
         product.categories.includes('accessories') &&
         product.categories.includes('trending')
     );
+    const navigate = useNavigate();
+    const handleViewMore = () => {
+        navigate('/category-page?category=kurtis');
+    };
 
     return (
         <div className='trending-section'>
@@ -18,7 +23,7 @@ const ProductGrid = () => {
                     <Card key={product.id} product={product} />
                 ))}
             </div>
-            <button className="new-arrival-view-more-btn">VIEW MORE</button>
+            <button className="new-arrival-view-more-btn" onClick={handleViewMore}>VIEW MORE</button>
         </div>
     );
 };

@@ -2,6 +2,7 @@ import React from 'react';
 import Card from './card';
 import './TrendingFashion.css';
 import products from '../data/products';
+import { useNavigate } from 'react-router-dom';
 
 const ClothingPageProduct = () => {
     const trendingAccessories = products.filter(product =>
@@ -13,6 +14,10 @@ const ClothingPageProduct = () => {
         product.categories.includes('accessories') &&
         product.categories.includes('trending')
     );
+    const navigate = useNavigate();
+    const handleViewMore = () => {
+        navigate('/category-page?category=kurtis');
+    };
 
     return (
         <>
@@ -24,7 +29,7 @@ const ClothingPageProduct = () => {
                         <Card key={product.id} product={product} />
                     ))}
                 </div>
-                <button className="new-arrival-view-more-btn">VIEW MORE</button>
+                <button className="new-arrival-view-more-btn" onClick={handleViewMore}>VIEW MORE</button>
             </div>
             <div className='spac-padding'></div>
             <div className='trending-section'>
@@ -44,7 +49,7 @@ const ClothingPageProduct = () => {
                         <Card key={product.id} product={product} />
                     ))}
                 </div>
-                <button className="new-arrival-view-more-btn">VIEW MORE</button>
+                <button className="new-arrival-view-more-btn" onClick={handleViewMore}>VIEW MORE</button>
             </div>
         </>
     );

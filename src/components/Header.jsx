@@ -15,7 +15,7 @@ function Header() {
             <div className={`header-navbar ${menuOpen ? 'open' : ''}`}>
                 <ul>
                     <li onClick={() => navigate('/')}>Home</li>
-                    <li>About Us</li>
+                    <li onClick={() => navigate('/about-us')}>About Us</li>
                     <li onClick={() => navigate('/clothing-store')}>Clothing</li>
                     <li>Contact Us</li>
                 </ul>

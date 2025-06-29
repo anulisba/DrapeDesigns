@@ -2,22 +2,28 @@ import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import './CategoryCarousel.css';
 import ct1 from '../assets/category1.webp';
 import ct2 from '../assets/category2.png';
+import { useNavigate } from 'react-router-dom';
 
 const items = [
-    { label: 'Neck Pieces', img: ct1 },
-    { label: 'Kurtis', img: ct2 },
-    { label: 'Ear Rings', img: ct1 },
-    { label: 'Sarees', img: ct2 },
-    { label: 'Bangles', img: ct1 },
-    { label: 'Lehengas', img: ct2 },
-    { label: 'Anklets', img: ct1 },
+    { label: 'Office Kurta', img: ct1 },
+    { label: 'Partywear Kurta', img: ct2 },
+    { label: 'Casual Kurti', img: ct1 },
+    { label: 'Festive Kurta', img: ct2 },
+    { label: 'Ethnic Long Kurti', img: ct1 },
+    { label: 'Short Printed Kurti', img: ct2 },
 ];
+
 
 const CategoryCarousel = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [slidesToShow, setSlidesToShow] = useState(3);
     const [transitionEnabled, setTransitionEnabled] = useState(true);
+    const navigate = useNavigate();
 
+    //handle nabogation
+    const handleCategoryClick = (label) => {
+        navigate(`/category-page?category=${encodeURIComponent(label)}`)
+    }
     // Handle window resize for responsiveness
     useEffect(() => {
         const handleResize = () => {
@@ -101,6 +107,7 @@ const CategoryCarousel = () => {
                             key={index}
                             className="cc-carousel-item"
                             style={{ width: `${100 / slidesToShow}%` }}
+                            onClick={() => handleCategoryClick(item.label)}
                         >
                             <div className="cc-item-image-wrapper">
                                 <div className="cc-item-image-wrapper2">
