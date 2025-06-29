@@ -1,31 +1,65 @@
-// ProductDetailPage.jsx
 import React, { useState } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import products from '../data/products';
 import './ProductDetailPage.css';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import CustomerReviews from '../components/CsutomerReviewCard';
 import ProductGrid from '../components/TrendingFashion';
 import Footer from '../components/Footer';
 
-const sampleImages = [
-    'https://res.cloudinary.com/dpo91btlc/image/upload/v1748968758/product5_qlt5vk.jpg',
-    'https://res.cloudinary.com/dpo91btlc/image/upload/v1748968758/product5_qlt5vk.jpg',
-    'https://res.cloudinary.com/dpo91btlc/image/upload/v1748968758/product5_qlt5vk.jpg',
-    'https://res.cloudinary.com/dpo91btlc/image/upload/v1748968758/product5_qlt5vk.jpg',
-];
-
 const ProductDetailPage = () => {
+    const { id } = useParams();
+    const navigate = useNavigate();
+    const product = products.find(p => p.id === parseInt(id));
+
     const [mainImageIndex, setMainImageIndex] = useState(0);
+    const [selectedSize, setSelectedSize] = useState('');
+    const [quantity, setQuantity] = useState(1);
+    const [measurements, setMeasurements] = useState({
+        bust: '',
+        waist: '',
+        hip: '',
+        length: ''
+    });
 
-    const handleThumbnailClick = (index) => {
-        setMainImageIndex(index);
+    if (!product) return <div>Product not found</div>;
+
+    const handleThumbnailClick = (index) => setMainImageIndex(index);
+    const handleNextImage = () => setMainImageIndex((prev) => (prev + 1) % product.images.length);
+    const handlePrevImage = () => setMainImageIndex((prev) => (prev - 1 + product.images.length) % product.images.length);
+
+    const handleVariantClick = (variantProductId) => {
+        setMainImageIndex(0)
+        navigate(`/product/${variantProductId}`);
     };
 
-    const handleNextImage = () => {
-        setMainImageIndex((prev) => (prev + 1) % sampleImages.length);
+    const handleQuantityChange = (delta) => {
+        setQuantity(prev => Math.max(1, prev + delta));
     };
 
-    const handlePrevImage = () => {
-        setMainImageIndex((prev) => (prev - 1 + sampleImages.length) % sampleImages.length);
+    const handleMeasurementChange = (e) => {
+        setMeasurements(prev => ({
+            ...prev,
+            [e.target.name]: e.target.value
+        }));
+    };
+
+    const handleBuyNow = () => {
+        const msg = `
+*Product Name:* ${product.productName}
+*Size:* ${selectedSize || 'Not selected'}
+*Quantity:* ${quantity}
+*Bust:* ${measurements.bust}
+*Waist:* ${measurements.waist}
+*Hip:* ${measurements.hip}
+*Length:* ${measurements.length}
+*Price:* ₹${product.offerPrice}
+*Image:* ${product.images[mainImageIndex]}
+        `;
+
+        const encodedMsg = encodeURIComponent(msg);
+        const whatsappURL = `https://wa.me/917034864957?text=${encodedMsg}`;
+        window.open(whatsappURL, '_blank');
     };
 
     return (
@@ -33,7 +67,7 @@ const ProductDetailPage = () => {
             <div className="detail-page-container">
                 <div className="detail-page-left-section">
                     <div className="detail-page-thumbnails">
-                        {sampleImages.map((img, index) => (
+                        {product.images.map((img, index) => (
                             <img
                                 key={index}
                                 src={img}
@@ -44,81 +78,101 @@ const ProductDetailPage = () => {
                         ))}
                     </div>
                     <div className="detail-page-main-image-wrapper">
-                        <img
-                            src={sampleImages[mainImageIndex]}
-                            alt="Main Product"
-                            className="detail-page-main-image"
-                        />
-                        <button className="detail-page-arrow left" onClick={handlePrevImage}>
-                            <FaChevronLeft />
-                        </button>
-                        <button className="detail-page-arrow right" onClick={handleNextImage}>
-                            <FaChevronRight />
-                        </button>
+                        <img src={product.images[mainImageIndex]} alt="Main Product" className="detail-page-main-image" />
+                        <button className="detail-page-arrow left" onClick={handlePrevImage}><FaChevronLeft /></button>
+                        <button className="detail-page-arrow right" onClick={handleNextImage}><FaChevronRight /></button>
                     </div>
+                </div>
+                <div className="detail-page-color-variants-mobile">
+                    {product.colorVariants.map((variant, index) => (
+                        <img
+                            key={index}
+                            src={variant.image}
+                            alt={`Color ${variant.color}`}
+                            className="color-variant-img"
+                            onClick={() => handleVariantClick(variant.productId)}
+                        />
+                    ))}
                 </div>
 
                 <div className="detail-page-right-section">
-                    <p className="detail-page-brand">Drape Designs <span className="detail-page-badge">10%</span></p>
-                    <h2 className="detail-page-product-name">Product Name</h2>
+                    <p className="detail-page-brand">
+                        {product.brand}
+                        <span className="detail-page-badge">{product.discountPercentage}%</span>
+                    </p>
+                    <h2 className="detail-page-product-name">{product.productName}</h2>
                     <p className="detail-page-price">
-                        <span className="detail-page-original-price">Rs 1650</span> Rs 999
+                        <span className="detail-page-original-price">₹{product.actualPrice}</span>
+                        ₹{product.offerPrice}
                     </p>
-                    <p className="detail-page-description">
-                        This is a traditional saree that requires manual draping. It is recommended for all body types,
-                        including pregnant women, who often prefer the flexibility and custom draping of a regular saree.
-                    </p>
+                    <p className="detail-page-description">{product.description}</p>
+
+                    {/* Size */}
                     <div className="detail-page-size-section">
                         <p>Size Chart</p>
                         <div className="detail-page-sizes">
-                            {['XS', 'S', 'M', 'L', 'XL', '2XL'].map(size => (
-                                <button key={size} className="detail-page-size-btn">{size}</button>
+                            {product.sizes.map(size => (
+                                <button
+                                    key={size}
+                                    className={`detail-page-size-btn ${selectedSize === size ? 'selected' : ''}`}
+                                    onClick={() => setSelectedSize(size)}
+                                >
+                                    {size}
+                                </button>
                             ))}
                         </div>
                     </div>
 
+                    {/* Quantity */}
                     <div className="detail-page-quantity-section">
                         <p>Quantity</p>
                         <div className="detail-page-quantity-control">
-                            <button>-</button>
-                            <span>1</span>
-                            <button>+</button>
+                            <button onClick={() => handleQuantityChange(-1)}>-</button>
+                            <span>{quantity}</span>
+                            <button onClick={() => handleQuantityChange(1)}>+</button>
                         </div>
                     </div>
 
+                    {/* Measurements */}
                     <div className="detail-page-measurements">
                         <p>Body measurements for selected size. (Optional)</p>
                         <div className="detail-page-input-group">
-                            <input type="text" placeholder="Bust (In Inches)" />
-                            <input type="text" placeholder="Waist (In Inches)" />
+                            <input type="text" placeholder="Bust (In Inches)" name="bust" value={measurements.bust} onChange={handleMeasurementChange} />
+                            <input type="text" placeholder="Waist (In Inches)" name="waist" value={measurements.waist} onChange={handleMeasurementChange} />
                         </div>
                         <div className="detail-page-input-group">
-                            <input type="text" placeholder="Hip (In Inches)" />
-                            <input type="text" placeholder="Length (In Inches)" />
+                            <input type="text" placeholder="Hip (In Inches)" name="hip" value={measurements.hip} onChange={handleMeasurementChange} />
+                            <input type="text" placeholder="Length (In Inches)" name="length" value={measurements.length} onChange={handleMeasurementChange} />
                         </div>
                     </div>
 
-                    <button className="detail-page-buy-btn">Buy Now</button>
-
-
+                    <button className="detail-page-buy-btn" onClick={handleBuyNow}>Buy Now</button>
                 </div>
+            </div>
 
+            {/* Color Variants */}
+            <div className="detail-page-color-variants-desktop">
+                {product.colorVariants.map((variant, index) => (
+                    <img
+                        key={index}
+                        src={variant.image}
+                        alt={`Color ${variant.color}`}
+                        className="color-variant-img"
+                        onClick={() => handleVariantClick(variant.productId)}
+                    />
+                ))}
             </div>
-            <div className="detail-page-color-variants">
-                <img src="https://res.cloudinary.com/dpo91btlc/image/upload/v1748968758/product5_qlt5vk.jpg" alt="Variant 1" />
-                <img src="https://res.cloudinary.com/dpo91btlc/image/upload/v1748968758/product5_qlt5vk.jpg" alt="Variant 2" />
-                <img src="https://res.cloudinary.com/dpo91btlc/image/upload/v1748968758/product5_qlt5vk.jpg" alt="Variant 3" />
-            </div>
+
             <div className='product-extra-desc'>
-                <h4>Material Discription</h4>
-                <p>This is a traditional saree that requires manual draping. It is recommended for all body types, including pregnant women, who often prefer the flexibility and custom draping of a regular saree.
-                    This is a traditional saree that requires manual draping. It is recommended for all body types, including pregnant women, who often prefer the flexibility and custom draping of a regular saree.</p>
+                <h4>Material Description</h4>
+                <p>{product.materialDescription}</p>
             </div>
+
             <div className='product-extra-desc'>
                 <h4>Shipping Policy</h4>
-                <p>This is a traditional saree that requires manual draping. It is recommended for all body types, including pregnant women, who often prefer the flexibility and custom draping of a regular saree.
-                    This is a traditional saree that requires manual draping. It is recommended for all body types, including pregnant women, who often prefer the flexibility and custom draping of a regular saree.</p>
+                <p>{product.shippingPolicy}</p>
             </div>
+
             <CustomerReviews />
             <ProductGrid />
             <Footer />

@@ -35,7 +35,7 @@
     width: 100%;
     overflow: hidden;
     position: relative;
-    height: 60px;
+    height: 100px;
 }
 
 .carousel-track {
@@ -55,10 +55,11 @@
 
 .carousel-text {
     text-align: center;
-    font-size: 1.25rem;
+    font-size: 2.5rem;
     font-weight: 500;
     color: #4b5563;
-    font-family: 'Jost', sans-serif;
+    font-family: "Italiana", sans-serif;
+    font-weight: 400;
     padding: 0 20px;
     margin: 0;
     width: 100%;
@@ -89,6 +90,7 @@
     width: 80%;
     margin: 0 auto;
     margin-top: 50px;
+    margin-bottom: 2rem;
 }
 
 .ad-image {
@@ -104,7 +106,7 @@
     }
 
     .carousel-text {
-        font-size: 1.1rem;
+        font-size: 1.8rem;
     }
 }
 
@@ -119,7 +121,7 @@
     }
 
     .carousel-container {
-        height: 50px;
+        height: 70px;
     }
 }
 
@@ -129,12 +131,12 @@
     }
 
     .carousel-text {
-        font-size: 0.9rem;
+        font-size: 1.2rem;
         padding: 0 10px;
     }
 
     .carousel-container {
-        height: 40px;
+        height: 60px;
     }
 
     .highlights-section {
@@ -149,7 +151,7 @@
     }
 
     .carousel-text {
-        font-size: 1.1rem;
+        font-size: 1.5rem;
     }
 
     .ad-container {
@@ -164,12 +166,12 @@
     }
 
     .carousel-text {
-        font-size: 1rem;
+        font-size: 1.5rem;
         padding: 0 15px;
     }
 
     .carousel-container {
-        height: 50px;
+        height: 70px;
     }
 }
 
@@ -179,12 +181,13 @@
     }
 
     .carousel-text {
-        font-size: 0.9rem;
+        font-size: 1.2rem;
         padding: 0 10px;
+
     }
 
     .carousel-container {
-        height: 40px;
+        height: 60px;
     }
 
     .highlights-section {

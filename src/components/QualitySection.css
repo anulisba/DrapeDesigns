@@ -41,10 +41,10 @@
 }
 
 .quality-title {
-    font-family: 'Jost', sans-serif;
+    font-family: "Italiana", sans-serif;
     font-weight: 600;
     color: #5c3d1e;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     letter-spacing: 0.5px;
 }
 
@@ -52,8 +52,8 @@
     font-family: 'Jost', sans-serif;
     font-weight: 400;
     color: #8b5e3c;
-    font-size: 0.95rem;
-    margin-top: 0.2rem;
+    font-size: 1.2rem;
+
 }
 
 /* RESPONSIVENESS */

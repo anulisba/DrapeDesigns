@@ -72,10 +72,12 @@
 
 .cc-item-label {
     margin-top: 0.5rem;
-    font-size: 0.875rem;
+    font-size: 1rem;
     color: #4b3c2d;
     font-weight: 500;
     text-align: center;
+    font-family: "Italiana", sans-serif;
+    font-weight: 400;
 }
 
 /* Responsive adjustments */
@@ -95,5 +97,9 @@
     .cc-item-image-wrapper2 {
         width: 4.5rem;
         height: 4.5rem;
+    }
+
+    .cc-item-label {
+        font-size: 0.8rem;
     }
 }

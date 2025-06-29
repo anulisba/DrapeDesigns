@@ -41,13 +41,13 @@
     display: none;
     flex-direction: column;
     cursor: pointer;
-    gap: 5px;
+    gap: 2px;
     z-index: 10;
 }
 
 .hamburger-icon span {
-    width: 25px;
-    height: 3px;
+    width: 15px;
+    height: 2px;
     background-color: white;
     border-radius: 2px;
     transition: transform 0.3s ease, opacity 0.3s ease;
@@ -90,7 +90,6 @@
         flex-direction: column;
         align-items: center;
         transition: right 0.3s ease-in-out;
-        padding-top: 100px;
         z-index: 5;
     }
 
@@ -101,6 +100,7 @@
     .header-navbar ul {
         flex-direction: column;
         gap: 20px;
+        top: 0;
     }
 
     .hamburger-icon {
