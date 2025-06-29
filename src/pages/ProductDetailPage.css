@@ -95,16 +95,19 @@
 .detail-page-product-name {
     font-size: 28px;
     margin: 10px 0;
+    font-family: 'Jost', sans-serif;
     font-weight: bold;
 }
 
 .detail-page-price {
     font-size: 18px;
+    font-family: 'Jost', sans-serif;
     margin-bottom: 15px;
 }
 
 .detail-page-original-price {
     text-decoration: line-through;
+    font-family: 'Jost', sans-serif;
     color: #888;
     margin-right: 10px;
 }
@@ -112,6 +115,7 @@
 .detail-page-description {
     font-size: 14px;
     color: #444;
+    font-family: 'Jost', sans-serif;
     margin-bottom: 20px;
 }
 
@@ -119,6 +123,7 @@
 .detail-page-quantity-section p {
     font-weight: 600;
     margin-bottom: 8px;
+    font-family: 'Jost', sans-serif;
 }
 
 .detail-page-sizes {
@@ -167,6 +172,7 @@
 
 .detail-page-measurements {
     margin-top: 20px;
+    font-family: 'Jost', sans-serif;
     margin-bottom: 20px;
 }
 
@@ -192,6 +198,7 @@
     border: none;
     border-radius: 6px;
     font-weight: bold;
+    font-family: 'Jost', sans-serif;
     cursor: pointer;
     margin-top: 20px;
 }
@@ -232,6 +239,7 @@
 }
 
 .product-extra-desc {
+    font-family: 'Jost', sans-serif;
     width: 80%;
     margin: 30px auto;
     text-align: justify;

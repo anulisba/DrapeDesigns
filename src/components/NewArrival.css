@@ -197,7 +197,8 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-weight: bold;
+    font-weight: 400;
+    font-family: 'Jost', sans-serif;
     transition: background-color 0.3s ease;
 }
 

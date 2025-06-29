@@ -24,6 +24,7 @@
     font-size: 14px;
     color: #333;
     margin: 4px 0;
+    font-family: 'Jost', sans-serif;
 }
 
 .price-section {
@@ -32,6 +33,7 @@
 
 .actual-price {
     text-decoration: line-through;
+    font-family: 'Jost', sans-serif;
     color: #888;
     font-size: 13px;
     margin-right: 8px;
@@ -39,6 +41,7 @@
 
 .offer-price {
     color: #000;
+    font-family: 'Jost', sans-serif;
     font-weight: bold;
     font-size: 14px;
 }
