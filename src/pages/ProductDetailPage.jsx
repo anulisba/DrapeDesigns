@@ -79,21 +79,37 @@ const ProductDetailPage = () => {
                         ))}
                     </div>
                     <div className="detail-page-main-image-wrapper">
-                        <img src={product.images[mainImageIndex]} alt="Main Product" className="detail-page-main-image" />
+                        <div className="main-image-color-label-below">
+
+
+                            <img src={product.images[mainImageIndex]} alt="Main Product" className="detail-page-main-image" />
+                            <p>Color: {product.color}</p>
+                        </div>
                         <button className="detail-page-arrow left" onClick={handlePrevImage}><FaChevronLeft /></button>
                         <button className="detail-page-arrow right" onClick={handleNextImage}><FaChevronRight /></button>
+
                     </div>
                 </div>
+
                 <div className="detail-page-color-variants-mobile">
-                    {product.colorVariants.map((variant, index) => (
+                    <h4 className="color-variants-heading">Available Colors</h4>
+                    <div className="color-variants-container">
+                        {/* Add current product as the first variant */}
                         <img
-                            key={index}
-                            src={variant.image}
-                            alt={`Color ${variant.color}`}
-                            className="color-variant-img"
-                            onClick={() => handleVariantClick(variant.productId)}
+                            src={product.images[0]}
+                            alt={`Current Color`}
+                            className="color-variant-img current"
                         />
-                    ))}
+                        {product.colorVariants.map((variant, index) => (
+                            <img
+                                key={index}
+                                src={variant.image}
+                                alt={`Color ${variant.color}`}
+                                className="color-variant-img"
+                                onClick={() => handleVariantClick(variant.productId)}
+                            />
+                        ))}
+                    </div>
                 </div>
 
                 <div className="detail-page-right-section">
@@ -151,17 +167,27 @@ const ProductDetailPage = () => {
                 </div>
             </div>
 
+
             {/* Color Variants */}
             <div className="detail-page-color-variants-desktop">
-                {product.colorVariants.map((variant, index) => (
+                <h4 className="color-variants-heading">Available Colors</h4>
+                <div className="color-variants-container">
+                    {/* Add current product as the first variant */}
                     <img
-                        key={index}
-                        src={variant.image}
-                        alt={`Color ${variant.color}`}
-                        className="color-variant-img"
-                        onClick={() => handleVariantClick(variant.productId)}
+                        src={product.images[0]}
+                        alt={`Current Color`}
+                        className="color-variant-img current"
                     />
-                ))}
+                    {product.colorVariants.map((variant, index) => (
+                        <img
+                            key={index}
+                            src={variant.image}
+                            alt={`Color ${variant.color}`}
+                            className="color-variant-img"
+                            onClick={() => handleVariantClick(variant.productId)}
+                        />
+                    ))}
+                </div>
             </div>
 
             <div className='product-extra-desc'>
