@@ -1,16 +1,13 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import './CategoryCarousel.css';
-import ct1 from '../assets/category1.webp';
-import ct2 from '../assets/category2.png';
 import { useNavigate } from 'react-router-dom';
 
 const items = [
-    { label: 'Office Kurta', img: ct1 },
-    { label: 'Partywear Kurta', img: ct2 },
-    { label: 'Casual Kurti', img: ct1 },
-    { label: 'Festive Kurta', img: ct2 },
-    { label: 'Ethnic Long Kurti', img: ct1 },
-    { label: 'Short Printed Kurti', img: ct2 },
+    { label: 'Ethnic Wear', img: "https://res.cloudinary.com/dpo91btlc/image/upload/v1750586423/WhatsApp_Image_2025-06-09_at_11.01.09_AM_gpex3q.jpg" },
+    { label: 'Semi-Formal', img: 'https://res.cloudinary.com/dpo91btlc/image/upload/v1750586400/WhatsApp_Image_2025-06-09_at_11.01.50_AM_x2r7gq.jpg' },
+    { label: 'Casual Wear', img: 'https://res.cloudinary.com/dpo91btlc/image/upload/v1754709712/1AF07137-B737-45E4-ABD5-E7C04CF19F37_jzpd7s.jpg' },
+    { label: 'Festive Wear', img: 'https://res.cloudinary.com/dpo91btlc/image/upload/v1754709712/34E7F1D3-5896-4A11-890A-E16FF938F610_lqwgd3.jpg' },
+    { label: 'Formal Wear', img: 'https://res.cloudinary.com/dpo91btlc/image/upload/v1754709711/2CB806AB-D87C-495F-B4F5-8510C35D8F99_ehbpvx.jpg' },
 ];
 
 

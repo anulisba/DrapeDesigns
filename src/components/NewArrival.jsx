@@ -3,11 +3,11 @@ import './NewArrival.css';
 import { useNavigate } from 'react-router-dom';
 
 const newArrivals = [
-    { src: "https://res.cloudinary.com/dpo91btlc/image/upload/v1750586424/WhatsApp_Image_2025-06-09_at_11.01.11_AM_1_qxfck7.jpg", title: 'Festive Kurti', product: 1 },
-    { src: "https://res.cloudinary.com/dpo91btlc/image/upload/v1750586400/WhatsApp_Image_2025-06-09_at_11.01.51_AM_1_wjxegy.jpg", title: 'Kurta', product: 2 },
-    { src: "https://res.cloudinary.com/dpo91btlc/image/upload/v1750586400/WhatsApp_Image_2025-06-09_at_11.01.50_AM_x2r7gq.jpg", title: 'Kurta', product: 2 },
-    { src: "https://res.cloudinary.com/dpo91btlc/image/upload/v1750586400/WhatsApp_Image_2025-06-09_at_11.01.50_AM_x2r7gq.jpg", title: 'Kurta', product: 2 },
-    { src: "https://res.cloudinary.com/dpo91btlc/image/upload/v1750586367/WhatsApp_Image_2025-06-09_at_11.01.24_AM_2_nft1s0.jpg", title: 'Pink kurti', product: 3 },
+    { src: "https://res.cloudinary.com/dpo91btlc/image/upload/v1750586424/WhatsApp_Image_2025-06-09_at_11.01.11_AM_1_qxfck7.jpg", title: 'Haldi Hues', product: 1 },
+    { src: "https://res.cloudinary.com/dpo91btlc/image/upload/v1754709710/8A31DB5B-D967-4E8D-BB9C-FC4A18183A5B_utdtug.jpg", title: 'Petal Whispers', product: 6 },
+    { src: "https://res.cloudinary.com/dpo91btlc/image/upload/v1750586400/WhatsApp_Image_2025-06-09_at_11.01.50_AM_x2r7gq.jpg", title: 'Peach Glow', product: 2 },
+    { src: "https://res.cloudinary.com/dpo91btlc/image/upload/v1754709710/FAE55202-BD22-436A-AC45-97D131289D87_rnxv0p.jpg", title: 'Pink Aura', product: 7 },
+    { src: "https://res.cloudinary.com/dpo91btlc/image/upload/v1750586367/WhatsApp_Image_2025-06-09_at_11.01.24_AM_2_nft1s0.jpg", title: 'Pink Bloom', product: 3 },
 ];
 
 const NewArrival = () => {

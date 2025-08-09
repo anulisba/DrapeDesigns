@@ -95,21 +95,31 @@ const ProductDetailPage = () => {
                     <h4 className="color-variants-heading">Available Colors</h4>
                     <div className="color-variants-container">
                         {/* Add current product as the first variant */}
-                        <img
-                            src={product.images[0]}
-                            alt={`Current Color`}
-                            className="color-variant-img current"
-                        />
-                        {product.colorVariants.map((variant, index) => (
+                        {product?.images?.[0] ? (
                             <img
-                                key={index}
-                                src={variant.image}
-                                alt={`Color ${variant.color}`}
-                                className="color-variant-img"
-                                onClick={() => handleVariantClick(variant.productId)}
+                                src={product.images[0]}
+                                alt="Current Color"
+                                className="color-variant-img current"
                             />
-                        ))}
+                        ) : (
+                            <p className="no-image">No main image available</p>
+                        )}
+
+                        {Array.isArray(product?.colorVariants) && product.colorVariants.length > 0 ? (
+                            product.colorVariants.map((variant, index) => (
+                                <img
+                                    key={index}
+                                    src={variant.image || "/fallback-image.png"}
+                                    alt={`Color ${variant.color || "N/A"}`}
+                                    className="color-variant-img"
+                                    onClick={() => handleVariantClick(variant.productId)}
+                                />
+                            ))
+                        ) : (
+                            <p className="no-variants"></p>
+                        )}
                     </div>
+
                 </div>
 
                 <div className="detail-page-right-section">
@@ -171,23 +181,31 @@ const ProductDetailPage = () => {
             {/* Color Variants */}
             <div className="detail-page-color-variants-desktop">
                 <h4 className="color-variants-heading">Available Colors</h4>
-                <div className="color-variants-container">
-                    {/* Add current product as the first variant */}
-                    <img
-                        src={product.images[0]}
-                        alt={`Current Color`}
-                        className="color-variant-img current"
-                    />
-                    {product.colorVariants.map((variant, index) => (
-                        <img
-                            key={index}
-                            src={variant.image}
-                            alt={`Color ${variant.color}`}
-                            className="color-variant-img"
-                            onClick={() => handleVariantClick(variant.productId)}
-                        />
-                    ))}
-                </div>
+                {product?.images?.[0] || (Array.isArray(product?.colorVariants) && product.colorVariants.length > 0) ? (
+                    <div className="color-variants-container">
+                        {/* Add current product as the first variant */}
+                        {product?.images?.[0] && (
+                            <img
+                                src={product.images[0]}
+                                alt="Current Color"
+                                className="color-variant-img current"
+                            />
+                        )}
+
+                        {Array.isArray(product?.colorVariants) && product.colorVariants.length > 0 &&
+                            product.colorVariants.map((variant, index) => (
+                                <img
+                                    key={index}
+                                    src={variant?.image || "/fallback-image.png"}
+                                    alt={`Color ${variant?.color || "N/A"}`}
+                                    className="color-variant-img"
+                                    onClick={() => handleVariantClick(variant?.productId)}
+                                />
+                            ))
+                        }
+                    </div>
+                ) : null}
+
             </div>
 
             <div className='product-extra-desc'>
