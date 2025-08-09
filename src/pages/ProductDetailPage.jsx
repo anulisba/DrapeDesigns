@@ -94,7 +94,6 @@ const ProductDetailPage = () => {
                 <div className="detail-page-color-variants-mobile">
                     <h4 className="color-variants-heading">Available Colors</h4>
                     <div className="color-variants-container">
-                        {/* Add current product as the first variant */}
                         {product?.images?.[0] ? (
                             <img
                                 src={product.images[0]}
@@ -119,9 +118,7 @@ const ProductDetailPage = () => {
                             <p className="no-variants"></p>
                         )}
                     </div>
-
                 </div>
-
                 <div className="detail-page-right-section">
                     <p className="detail-page-brand">
                         {product.brand}
@@ -133,8 +130,6 @@ const ProductDetailPage = () => {
                         ₹{product.offerPrice}
                     </p>
                     <p className="detail-page-description">{product.description}</p>
-
-                    {/* Size */}
                     <div className="detail-page-size-section">
                         <p>Size Chart</p>
                         <div className="detail-page-sizes">
@@ -149,8 +144,6 @@ const ProductDetailPage = () => {
                             ))}
                         </div>
                     </div>
-
-                    {/* Quantity */}
                     <div className="detail-page-quantity-section">
                         <p>Quantity</p>
                         <div className="detail-page-quantity-control">
@@ -159,8 +152,6 @@ const ProductDetailPage = () => {
                             <button onClick={() => handleQuantityChange(1)}>+</button>
                         </div>
                     </div>
-
-                    {/* Measurements */}
                     <div className="detail-page-measurements">
                         <p>Body measurements for selected size. (Optional)</p>
                         <div className="detail-page-input-group">
@@ -172,18 +163,13 @@ const ProductDetailPage = () => {
                             <input type="text" placeholder="Length (In Inches)" name="length" value={measurements.length} onChange={handleMeasurementChange} />
                         </div>
                     </div>
-
                     <button className="detail-page-buy-btn" onClick={handleBuyNow}>Buy Now</button>
                 </div>
             </div>
-
-
-            {/* Color Variants */}
             <div className="detail-page-color-variants-desktop">
                 <h4 className="color-variants-heading">Available Colors</h4>
                 {product?.images?.[0] || (Array.isArray(product?.colorVariants) && product.colorVariants.length > 0) ? (
                     <div className="color-variants-container">
-                        {/* Add current product as the first variant */}
                         {product?.images?.[0] && (
                             <img
                                 src={product.images[0]}
@@ -191,7 +177,6 @@ const ProductDetailPage = () => {
                                 className="color-variant-img current"
                             />
                         )}
-
                         {Array.isArray(product?.colorVariants) && product.colorVariants.length > 0 &&
                             product.colorVariants.map((variant, index) => (
                                 <img
@@ -205,9 +190,7 @@ const ProductDetailPage = () => {
                         }
                     </div>
                 ) : null}
-
             </div>
-
             <div className='product-extra-desc'>
                 <h4>Material Description</h4>
                 <p>{product.materialDescription}</p>
