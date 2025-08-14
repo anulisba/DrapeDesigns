@@ -39,7 +39,7 @@ const Footer = () => {
                     <h3 className="footer-heading">Contact</h3>
                     <p>Drape Designs</p>
                     <p>arafashionstore12@gmail.com</p>
-                    <p>+91 98470 75514</p>
+                    <p>+91 85900 71126 </p>
                 </div>
 
                 {/* Main Menu */}
