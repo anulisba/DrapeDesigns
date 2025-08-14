@@ -10,7 +10,7 @@ export default function ClothingStore() {
         <div className='clothing-store'>
             <div className="banner-container">
                 <img
-                    src="https://res.cloudinary.com/dpo91btlc/image/upload/v1746857236/Brown_Modern_Minimalist_Eid_Al-Fitr_Fashion_Sale_Promotion_Banner_20250407_221133_0000_nmv5at.jpg"
+                    src="https://res.cloudinary.com/dpo91btlc/image/upload/v1755144522/IMG-20250813-WA0024_izxjoh.jpg"
                     alt="Eid Fashion Sale Banner"
                     className="banner-image"
                 />
