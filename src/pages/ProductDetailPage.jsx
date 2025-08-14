@@ -59,7 +59,7 @@ const ProductDetailPage = () => {
         `;
 
         const encodedMsg = encodeURIComponent(msg);
-        const whatsappURL = `https://wa.me/919847075514?text=${encodedMsg}`;
+        const whatsappURL = `https://wa.me/918590071126?text=${encodedMsg}`;
         window.open(whatsappURL, '_blank');
     };
 
